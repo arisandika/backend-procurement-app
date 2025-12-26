@@ -1,93 +1,85 @@
+#!/bin/bash
+
+# =====================================================
 # Procurement App (Backend)
+# Go + Fiber + GORM
+# =====================================================
 
-Aplikasi manajemen procurement berbasis **Go + Fiber + GORM** dengan fitur CRUD master data, dan purchasing.
-
----
-
-## Dependencies Utama
-
-Jalankan perintah berikut sebelum mulai:
-
-go get github.com/gofiber/fiber/v2
-
-go get gorm.io/gorm
-
-go get gorm.io/driver/mysql
-
-go get github.com/golang-jwt/jwt/v5
-
-go get golang.org/x/crypto/bcrypt
-
-go get github.com/joho/godotenv
-
----
-
-## Setup (All-in-One)
-
-Step 1. **Clone repository**
-
+# -----------------------------
+# 1. Clone Repository
+# -----------------------------
 git clone https://github.com/arisandika/backend-procurement-app.git
-
 cd backend-procurement-app
 
-Buka Terminal, lalu jalankan perintah Install Dependencies di atas
+
+# -----------------------------
+# 2. Install Dependencies
+# -----------------------------
+go get github.com/gofiber/fiber/v2
+go get gorm.io/gorm
+go get gorm.io/driver/mysql
+go get github.com/golang-jwt/jwt/v5
+go get golang.org/x/crypto/bcrypt
+go get github.com/joho/godotenv
 
 
-Step 2. **Rename file `.env.example`** menjadi `.env` di root folder:
-`
+# -----------------------------
+# 3. Setup Environment File
+# -----------------------------
+# Rename .env.example to .env
+cp .env.example .env
+
+
+# Isi file .env dengan konfigurasi berikut
+cat <<EOF > .env
 DB_HOST=localhost
-
 DB_PORT=3306
-
 DB_USER=root
-
 DB_PASS=
-
 DB_NAME=procurement_db
 
 JWT_SECRET=supersecretkeyarisandika
 
 WEBHOOK_URL=https://webhook.site/ad8a98bb-dbc4-4a58-8826-a14e2750571c
-
 WEBHOOK_TIMEOUT=5
-`
-> Sesuaikan DB_USER`, `DB_PASS`, `DB_NAME` dengan konfigurasi MySQL kamu.
+EOF
+
+# NOTE:
+# - Sesuaikan DB_USER, DB_PASS, dan DB_NAME dengan MySQL kamu
+# - Pastikan database sudah dibuat di MySQL
 
 
-Step 3. **Jalankan aplikasi**
-
+# -----------------------------
+# 4. Run Application
+# -----------------------------
 go run cmd/server/main.go
 
-- Database akan otomatis **terkoneksi**, **migrasi tabel** berdasarkan package `models`, dan **seed data awal** (admin, supplier, item).  
-- Server Fiber berjalan di **http://localhost:3000**.  
+# Saat server pertama kali dijalankan:
+# - Database akan terkoneksi otomatis
+# - Auto migrate tabel dari models
+# - Seed data awal (admin, supplier, item)
+# - Server berjalan di http://localhost:3000
 
-Step 4. **Test Post Login pertama di Postman**
 
-`
-{
-  "username": "admin",
-  "password": "password"
-}
-`  
+# -----------------------------
+# 5. Test Login (Postman / Curl)
+# -----------------------------
+# Endpoint: POST /login
+# Body:
+# {
+#   "username": "admin",
+#   "password": "password"
+# }
 
-> Setelah login, semua fitur CRUD dan purchasing sudah bisa digunakan.
+# Contoh curl:
+# curl -X POST http://localhost:3000/login \
+#   -H "Content-Type: application/json" \
+#   -d '{"username":"admin","password":"password"}'
 
----
 
-## Fitur
-
-- CRUD Master Data:
-  - Supplier
-  - Item
-  - User
-- Purchasing:
-  - Create / Update / Delete
-- Auto-migrate & seed data saat `go run main.go`
-
----
-
-## Notes
-
-- **Migrasi**: otomatis dari `main.go` via `db.AutoMigrate(...)`  
-- **Seed data**: hanya dijalankan jika tabel kosong, sehingga aman dijalankan berulang.  
-- **Reset database**: hapus database atau drop tabel, kemudian `go run cmd/server/main.go` lagi.
+# -----------------------------
+# 6. Reset Database (Optional)
+# -----------------------------
+# - Drop database atau semua tabel
+# - Jalankan ulang:
+# go run cmd/server/main.go
