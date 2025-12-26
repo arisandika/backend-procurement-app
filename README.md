@@ -4,6 +4,12 @@ Aplikasi manajemen procurement berbasis **Go + Fiber + GORM** dengan fitur CRUD 
 
 ---
 
+## Setup Database Mysql
+
+Buat database dengan nama `db_procurement` di localhost
+
+---
+
 ## Setup (All-in-One)
 
 1. **Clone repository**
