@@ -63,6 +63,7 @@ Jalankan perintah berikut untuk meng-install:
 
 5. **Login pertama menggunakan Postman**
 
+- POST: http://127.0.0.1:3000/api/login
 - Body:
 
 `{
