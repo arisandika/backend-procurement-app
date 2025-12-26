@@ -34,7 +34,7 @@ Jalankan perintah berikut untuk meng-install:
 
 `go get github.com/joho/godotenv`
 
-3. **Rename file `.env.example` Menjadi `.env`** di root folder (Jika tidak ada `.env`-nya:
+3. **Rename file `.env.example` Menjadi `.env`** di root folder (Jika tidak ada `.env`-nya)
 
 `DB_HOST=localhost`
 
