@@ -27,7 +27,10 @@ go get github.com/joho/godotenv
 Step 1. **Clone repository**
 
 git clone https://github.com/arisandika/backend-procurement-app.git
+
 cd backend-procurement-app
+
+Buka Terminal, lalu jalankan perintah Install Dependencies di atas
 
 
 Step 2. **Rename file `.env.example`** menjadi `.env` di root folder:
