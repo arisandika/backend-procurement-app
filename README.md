@@ -16,7 +16,7 @@ Buat database dengan nama `db_procurement` di localhost
 
 git clone https://github.com/arisandika/backend-procurement-app.git
 
-`cd procurement-app`
+`cd backend-procurement-app`
 
 2. **Install Dependencies Utama**
 
