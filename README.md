@@ -9,10 +9,15 @@ Aplikasi manajemen procurement berbasis **Go + Fiber + GORM** dengan fitur CRUD 
 Jalankan perintah berikut sebelum mulai:
 
 go get github.com/gofiber/fiber/v2
+
 go get gorm.io/gorm
+
 go get gorm.io/driver/mysql
+
 go get github.com/golang-jwt/jwt/v5
+
 go get golang.org/x/crypto/bcrypt
+
 go get github.com/joho/godotenv
 
 ---
