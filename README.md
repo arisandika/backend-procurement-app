@@ -9,6 +9,7 @@ Aplikasi manajemen procurement berbasis **Go + Fiber + GORM** dengan fitur CRUD 
 1. **Clone repository**
 
 git clone https://github.com/arisandika/backend-procurement-app.git
+
 `cd procurement-app`
 
 2. **Install Dependencies Utama**
@@ -16,21 +17,33 @@ git clone https://github.com/arisandika/backend-procurement-app.git
 Jalankan perintah berikut untuk meng-install:
 
 `go get github.com/gofiber/fiber/v2`
+
 `go get gorm.io/gorm`
+
 `go get gorm.io/driver/mysql`
+
 `go get github.com/golang-jwt/jwt/v5`
+
 `go get golang.org/x/crypto/bcrypt`
+
 `go get github.com/joho/godotenv`
 
 3. **Rename file `.env.example` Menjadi `.env`** di root folder:
 
 `DB_HOST=localhost`
+
 `DB_PORT=3306`
+
 `DB_USER=root`
+
 `DB_PASS=password`
+
 `DB_NAME=procurement_db`
+
 `JWT_SECRET=secret_key`
+
 `WEBHOOK_URL=https://webhook.site/ad8a98bb-dbc4-4a58-8826-a14e2750571c`
+
 `WEBHOOK_TIMEOUT=5`
 
 > Sesuaikan `DB_USER`, `DB_PASS`, `DB_NAME` dengan konfigurasi MySQL kamu.
@@ -44,7 +57,8 @@ Jalankan perintah berikut untuk meng-install:
 
 5. **Login pertama menggunakan Postman**
 
-- Body: 
+- Body:
+
 `{
   "username": "admin",
   "password": "admin123"
