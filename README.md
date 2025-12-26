@@ -29,8 +29,9 @@ Step 1. **Clone repository**
 git clone https://github.com/arisandika/backend-procurement-app.git
 cd backend-procurement-app
 
-Step 2. **Rename file `.env.example`** menjadi `.env` di root folder:
 
+Step 2. **Rename file `.env.example`** menjadi `.env` di root folder:
+`
 DB_HOST=localhost
 
 DB_PORT=3306
@@ -46,8 +47,9 @@ JWT_SECRET=supersecretkeyarisandika
 WEBHOOK_URL=https://webhook.site/ad8a98bb-dbc4-4a58-8826-a14e2750571c
 
 WEBHOOK_TIMEOUT=5
+`
+> Sesuaikan DB_USER`, `DB_PASS`, `DB_NAME` dengan konfigurasi MySQL kamu.
 
-> Sesuaikan `DB_USER`, `DB_PASS`, `DB_NAME` dengan konfigurasi MySQL kamu.
 
 Step 3. **Jalankan aplikasi**
 
